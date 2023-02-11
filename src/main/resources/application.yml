@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /hwstore
+#spring:
+##  datasource:
+##    url: jdbc:mysql://localhost:3306/hwshop?serverTimezone=UTC
+##    username: 'root'
+##    password: 'Gringotts'
+##    driver-class-name: com.mysql.jdbc.Driver
+##  sql:
+##    init:
+##      platform: org.hibernate.dialect.MySQL5InnoDBDialect
+##      mode: always
+
+
+database:
+  url: jdbc:mysql://localhost:3306/hwshop?serverTimezone=UTC
+  username: 'root'
+  password: 'Gringotts'
+  driverClassName: com.mysql.jdbc.Driver
+
+hibernate:
+  dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
+  show_sql: true
+  format_sql: true
+  hbm2ddl:
+    auto: update
+  id:
+    new_generator_mappings: true
+
+spring:
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
