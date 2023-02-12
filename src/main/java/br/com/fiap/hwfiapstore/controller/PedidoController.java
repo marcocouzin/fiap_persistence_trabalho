@@ -41,7 +41,13 @@ public class PedidoController {
 
 
     @GetMapping("/listapedido/{codPedido}")
-    public ResponseEntity<Pedido> getItensCarrinho(@PathVariable("codPedido") Long codPedido) {
+    public ResponseEntity<Pedido> getPedido(@PathVariable("codPedido") Long codPedido) {
         return new ResponseEntity<>(this.pedidoService.getPedidoById(codPedido), HttpStatus.OK);
+    }
+
+
+    @GetMapping("/listapedidocliente/{codCliente}")
+    public ResponseEntity<List<Pedido>> getPedidoCliente(@PathVariable("codCliente") Long codCliente) {
+        return new ResponseEntity<>(this.pedidoService.getPedidoByCodCliente(codCliente), HttpStatus.OK);
     }
 }

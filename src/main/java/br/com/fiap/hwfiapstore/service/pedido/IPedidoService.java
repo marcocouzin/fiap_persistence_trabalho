@@ -12,4 +12,6 @@ public interface IPedidoService {
      List<Pedido> getAllPedidos();
 
      Pedido getPedidoById(long id);
+
+     List<Pedido> getPedidoByCodCliente(Long codCliente);
 } 

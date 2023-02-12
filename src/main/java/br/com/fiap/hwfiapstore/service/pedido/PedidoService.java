@@ -1,5 +1,6 @@
 package br.com.fiap.hwfiapstore.service.pedido;
 
+import br.com.fiap.hwfiapstore.entity.Carrinho;
 import br.com.fiap.hwfiapstore.entity.Cliente;
 import br.com.fiap.hwfiapstore.entity.Pedido;
 import br.com.fiap.hwfiapstore.repository.PedidoRepository;
@@ -44,5 +45,11 @@ public class PedidoService implements IPedidoService {
 	public Pedido getPedidoById(long codPedido) {
 		System.out.println("getPedidoById()");
 		return pedidoRepository.findById(codPedido).get();
+	}
+
+
+	public List<Pedido> getPedidoByCodCliente(Long codCliente) {
+		System.out.println("getPedidoByCodCliente()");
+		return this.pedidoRepository.findByCodCliente(codCliente);
 	}
 }

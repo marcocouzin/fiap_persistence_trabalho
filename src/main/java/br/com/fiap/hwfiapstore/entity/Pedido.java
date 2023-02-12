@@ -12,6 +12,9 @@ public class Pedido implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long codPedido;
 
+    @Column(name = "codCliente", insertable = false, updatable = false)
+    public long codCliente;
+
     @ManyToOne
     @JoinColumn(name = "codCliente")
     public Cliente cliente;
