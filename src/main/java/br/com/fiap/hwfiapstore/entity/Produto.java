@@ -1,7 +1,6 @@
 package br.com.fiap.hwfiapstore.entity;
 
 import javax.persistence.*;
-import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
