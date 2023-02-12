@@ -1,5 +1,6 @@
 package br.com.fiap.hwfiapstore.controller;
 
+import br.com.fiap.hwfiapstore.entity.Carrinho;
 import br.com.fiap.hwfiapstore.entity.Pedido;
 import br.com.fiap.hwfiapstore.service.pedido.IPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,16 @@ public class PedidoController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
+
     @GetMapping("listapedidos")
     public ResponseEntity<List<Pedido>> getAllPedidos() {
         List<Pedido> lista = pedidoService.getAllPedidos();
         return new ResponseEntity<>(lista, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/listapedido/{codPedido}")
+    public ResponseEntity<Pedido> getItensCarrinho(@PathVariable("codPedido") Long codPedido) {
+        return new ResponseEntity<>(this.pedidoService.getPedidoById(codPedido), HttpStatus.OK);
     }
 }

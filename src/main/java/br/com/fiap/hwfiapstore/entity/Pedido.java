@@ -13,7 +13,7 @@ public class Pedido implements Serializable {
     public long codPedido;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_cod_cliente")
+    @JoinColumn(name = "codCliente")
     public Cliente cliente;
 
 

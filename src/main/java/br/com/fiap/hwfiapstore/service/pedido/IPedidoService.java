@@ -11,10 +11,5 @@ public interface IPedidoService {
 
      List<Pedido> getAllPedidos();
 
-//     List<Pedido> getPedidoByCliente(long codCliente);
-
      Pedido getPedidoById(long id);
-
-
-     Pedido updatePedido(Pedido Pedido);
 } 

@@ -14,4 +14,5 @@ public class Produto implements Serializable {
 	public String name;
 	public String description;
 	public BigDecimal price;
+	public int estoque;
 }

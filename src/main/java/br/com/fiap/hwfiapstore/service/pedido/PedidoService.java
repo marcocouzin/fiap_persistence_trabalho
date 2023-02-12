@@ -24,10 +24,6 @@ public class PedidoService implements IPedidoService {
 
 
 	@Override
-	@Caching(
-			put= { @CachePut(value= "pedidoCache", key= "#pedido.codPedido") },
-			evict= { @CacheEvict(value= "allPedidosCache", allEntries= true) }
-	)
 	public Pedido addPedido(Pedido pedido){
 		System.out.println("addPedido()");
 		return pedidoRepository.save(pedido);
@@ -36,7 +32,6 @@ public class PedidoService implements IPedidoService {
 
 
 	@Override
-	@Cacheable(value= "allPedidosCache", unless= "#result.size() == 0")
 	public List<Pedido> getAllPedidos(){
 		System.out.println("getAllPedidos()");
 		List<Pedido> lista = new ArrayList<>();
@@ -45,44 +40,9 @@ public class PedidoService implements IPedidoService {
 	}
 
 
-
-
-
-
-
-
-//	@Override
-//	public List<Pedido> getPedidoByCliente(long codCliente) {
-//		return null;
-//	}
-
-
-
-
-
-
-
-
-
-
-
 	@Override
-	@Cacheable(value= "pedidoCache", key= "#id")
-	public Pedido getPedidoById(long id) {
+	public Pedido getPedidoById(long codPedido) {
 		System.out.println("getPedidoById()");
-		return pedidoRepository.findById(id).get();
-	}
-
-
-
-
-	@Override
-	@Caching(
-		put= { @CachePut(value= "pedidoCache", key= "#pedido.id") },
-		evict= { @CacheEvict(value= "allPedidosCache", allEntries= true) }
-	)
-	public Pedido updatePedido(Pedido pedido) {
-		System.out.println("addPedido()");
-		return pedidoRepository.save(pedido);
+		return pedidoRepository.findById(codPedido).get();
 	}
 }
