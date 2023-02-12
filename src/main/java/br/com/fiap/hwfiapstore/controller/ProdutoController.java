@@ -22,10 +22,6 @@ public class ProdutoController {
         this.produtoService = produtoService;
     }
 
-    @RequestMapping("greeting")
-    public String greeting() {
-        return "Welcome to product API!";
-    }
 
     @PostMapping("produto")
     public ResponseEntity<Void> addProduto(@RequestBody Produto produto, UriComponentsBuilder builder) {

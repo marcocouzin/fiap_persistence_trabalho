@@ -22,10 +22,6 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @RequestMapping("greeting")
-    public String greeting() {
-        return "Welcome to client API!";
-    }
 
     @PostMapping("cliente")
     public ResponseEntity<Void> addCliente(@RequestBody Cliente cliente, UriComponentsBuilder builder) {

@@ -7,13 +7,14 @@ import java.util.List;
 
 public interface IPedidoService {
 
+     Pedido addPedido(Pedido Pedido);
+
      List<Pedido> getAllPedidos();
+
+//     List<Pedido> getPedidoByCliente(long codCliente);
 
      Pedido getPedidoById(long id);
 
-     Pedido addPedido(Pedido Pedido);
 
      Pedido updatePedido(Pedido Pedido);
-
-     void deletePedido(long id);
 } 

@@ -22,12 +22,8 @@ public class PedidoController {
         this.pedidoService = pedidoService;
     }
 
-    @RequestMapping("greeting")
-    public String greeting() {
-        return "Welcome to order API!";
-    }
 
-    @PostMapping("pedido")
+    @PostMapping("addpedido")
     public ResponseEntity<Void> addPedido(@RequestBody Pedido pedido, UriComponentsBuilder builder) {
         Pedido savedPedido = pedidoService.addPedido(pedido);
         HttpHeaders headers = new HttpHeaders();
@@ -35,9 +31,15 @@ public class PedidoController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
-    @GetMapping("pedidos")
+    @GetMapping("listapedidos")
     public ResponseEntity<List<Pedido>> getAllPedidos() {
         List<Pedido> lista = pedidoService.getAllPedidos();
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
+
+
+//    @GetMapping("/listapedidos/{codCliente}")
+//    public ResponseEntity<List<Pedido>> getPedidosByCliente(@PathVariable("codCliente") Long codCliente) {
+//        return new ResponseEntity<>(this.pedidoService.getPedidoByCliente(codCliente), HttpStatus.OK);
+//    }
 }

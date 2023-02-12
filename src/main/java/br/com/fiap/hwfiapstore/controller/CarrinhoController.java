@@ -44,7 +44,7 @@ public class CarrinhoController {
 
 
     @GetMapping("/itens/{codCliente}")
-    public ResponseEntity<List<Carrinho>> getLaptopsByBrand(@PathVariable("codCliente") Long codCliente) {
+    public ResponseEntity<List<Carrinho>> getItensCarrinho(@PathVariable("codCliente") Long codCliente) {
         return new ResponseEntity<>(this.carrinhoService.getCarrinhoByCodCliente(codCliente), HttpStatus.OK);
     }
 }
