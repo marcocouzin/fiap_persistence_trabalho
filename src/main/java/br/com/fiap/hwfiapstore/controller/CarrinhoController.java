@@ -19,11 +19,6 @@ public class CarrinhoController {
         this.carrinhoService = carrinhoService;
     }
 
-    @RequestMapping("greeting")
-    public String greeting() {
-        return "Welcome to cart API!";
-    }
-
 
     @PostMapping("additem")
     public ResponseEntity<Void> addCarrinho(@RequestBody Carrinho carrinho, UriComponentsBuilder builder) {

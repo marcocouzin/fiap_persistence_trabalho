@@ -36,10 +36,4 @@ public class PedidoController {
         List<Pedido> lista = pedidoService.getAllPedidos();
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
-
-
-//    @GetMapping("/listapedidos/{codCliente}")
-//    public ResponseEntity<List<Pedido>> getPedidosByCliente(@PathVariable("codCliente") Long codCliente) {
-//        return new ResponseEntity<>(this.pedidoService.getPedidoByCliente(codCliente), HttpStatus.OK);
-//    }
 }
